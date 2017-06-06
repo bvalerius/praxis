@@ -57,3 +57,7 @@ type ServiceScale struct {
 func (s Service) BuildHash() string {
 	return fmt.Sprintf("%x", sha1.Sum([]byte(fmt.Sprintf("build[path=%q, args=%v] image=%q", s.Build.Path, s.Build.Args, s.Image))))
 }
+
+func (s Service) GetName() string {
+	return s.Name
+}
